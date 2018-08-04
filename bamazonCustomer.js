@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "",
+  password: "1875Njr1875",
   database: "bamazon"
 });
 
@@ -26,6 +26,12 @@ function readProducts() {
   connection.query("SELECT * FROM products", function(err, res) {
     if (err) throw err;
     // Log all results of the SELECT statement
-    console.log(res);
-  });
+    console.log('Welcome to Bamazon')
+console.log('----------------------------------------------------------------------------------------------------')
+
+for(var i = 0; i<res.length;i++){
+  console.log("id: " + res[i].item_id + " | " + "Product: " + res[i].product_name + " | " + "Department: " + res[i].department_name + " | " + "Price: " + res[i].price + " | " + "QTY: " + res[i].stock_quantity);
+  console.log('--------------------------------------------------------------------------------------------------')
 }
+    });
+  }
